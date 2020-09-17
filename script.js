@@ -7,5 +7,9 @@ const timer = new Promise((resolve, reject) => {
     }, randTime);
   });
   
-  timer.then(value => console.log(`${value/1000} seconds`));
+  timer.then(value => {
+      console.log(`${value/1000} seconds`);
+      const bodyEl = document.querySelector('body')
+      bodyEl.innerHTML += `<h1>${value/1000} seconds</h1>`
+    });
   
